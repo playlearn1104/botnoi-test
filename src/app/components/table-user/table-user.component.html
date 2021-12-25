@@ -1,40 +1,47 @@
 <div class="container">
-    <div class="row">
-        <h1 class="text-primary text-center">
-            USER SEARCH FILTER
-        </h1>
+  <div class="row">
+    <h1 class="text-primary text-center">
+      USER SEARCH FILTER
+    </h1>
+  </div>
+  <div class="row mb-4">
+    <div class="col-12">
+    <input type="text" class="form-control" name="inputSearch" [(ngModel)]="inputSearch">
+  </div>
+  </div>
+  <div class="row">
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr class="table-primary">
+            <th scope="col">id</th>
+            <th scope="col">name</th>
+            <th scope="col">username</th>
+            <th scope="col">email</th>
+            <th scope="col">address</th>
+            <th scope="col">phone</th>
+            <th scope="col">website</th>
+            <th scope="col">company</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let item of tableUser| searchFilter:inputSearch">
+          <tr>
+            <th scope="row">{{item.id}}</th>
+            <td>{{item.name}}</td>
+            <td>{{item.username}}</td>
+            <td>{{item.email}}</td>
+            <td>
+              <p>{{item.address.street}} {{item.address.suite}} {{item.address.city}} {{item.address.zipcode}}
+                {{item.address.geo.lat}} {{item.address.geo.lng}}</p>
+            </td>
+            <td>{{item.phone}}</td>
+            <td>{{item.website}}</td>
+            <td>
+              <p>{{item.company.name}}<br />{{item.company.catchPhrase}}<br />{{item.company.bs}}</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-    <div class="row mb-4">
-      <input type="text" class="form-control" name="inputSearch" [(ngModel)]="inputSearch">
-    </div>
-    <div class="row">
-        <table class="table">
-            <thead>
-              <tr class="table-primary">
-                <th scope="col">id</th>
-                <th scope="col">name</th> 
-                <th scope="col">username</th>
-                <th scope="col">email</th>
-                <th scope="col">address</th>
-                <th scope="col">phone</th>
-                <th scope="col">website</th>
-                <th scope="col">company</th>
-              </tr>
-            </thead>
-            <tbody *ngFor = "let item of tableUser| searchFilter:inputSearch">
-              <tr>
-                <th scope="row">{{item.id}}</th>
-                <td>{{item.name}}</td>
-                <td>{{item.username}}</td>
-                <td>{{item.email}}</td>
-                <td ><p>{{item.address.street}} {{item.address.suite}} {{item.address.city}} {{item.address.zipcode}}
-                  {{item.address.geo.lat}} {{item.address.geo.lng}}</p>
-                </td>
-                <td>{{item.phone}}</td>
-                <td>{{item.website}}</td>
-                <td><p>{{item.company.name}}<br/>{{item.company.catchPhrase}}<br/>{{item.company.bs}}</p></td>
-              </tr>
-            </tbody>
-          </table>
-    </div>
+  </div>
 </div>
