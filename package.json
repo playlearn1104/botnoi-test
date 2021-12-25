@@ -5,8 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build:prod": "ng build --configuration production --base-href https://github.com/playlearn1104/search-filter-call-api-demo",
-    "test:headless": "ng test --watch=false --browsers=ChromeHeadless",
+    "build-prod": "ng build --prod --base-href https://playlearn1104.github.io/search-filter-call-api-demo/ ",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
