@@ -5,6 +5,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:prod": "ng build --configuration production --base-href https://github.com/playlearn1104/search-filter-call-api-demo",
+    "test:headless": "ng test --watch=false --browsers=ChromeHeadless",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -31,6 +33,7 @@
     "@angular/compiler-cli": "~11.1.1",
     "@types/jasmine": "~3.6.0",
     "@types/node": "^12.11.1",
+    "angular-cli-ghpages": "^1.0.0",
     "codelyzer": "^6.0.0",
     "jasmine-core": "~3.6.0",
     "jasmine-spec-reporter": "~5.0.0",
