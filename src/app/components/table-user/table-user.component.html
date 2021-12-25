@@ -21,7 +21,7 @@
                 <th scope="col">company</th>
               </tr>
             </thead>
-            <tbody *ngFor = "let item of tableUser| searchFilter:inputSearch" >
+            <tbody *ngFor = "let item of tableUser| searchFilter:inputSearch">
               <tr>
                 <th scope="row">{{item.id}}</th>
                 <td>{{item.name}}</td>
