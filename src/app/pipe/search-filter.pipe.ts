@@ -7,8 +7,6 @@ import { User } from '../model/user.model';
 export class SearchFilterPipe implements PipeTransform {
 
   transform(tableUsers:User[],inputSearch:string): User[] {
-    console.log(tableUsers);
-    console.log(inputSearch);
     if(!tableUsers||!inputSearch){
       return tableUsers;
     }
